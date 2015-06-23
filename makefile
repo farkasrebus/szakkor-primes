@@ -2,5 +2,5 @@ all:
 	g++ primes.c -o primes
 
 run:
-	./primes
+	./primes 100
 
