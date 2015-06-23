@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 
 int is_prime(int k) {
 	int prime = 1;
@@ -22,12 +23,16 @@ int number_of_primes(int n) {
 	return p;
 }
 
-int main() {
-	const int n = 1000000;
+int main(int argc, char* argv[]) {
+	if (argc < 2) {
+		printf("Usage: primes <n>\n");
+		return -1;
+	}
+	const int n = strtol(argv[1], NULL, 10);
 
-	printf("Calculating...\n");
+	printf("Calculating... ");
 	int p = number_of_primes(n);
-	printf("Done.\n");
+	printf("// Done.\n");
 	printf("There are %d primes from 1 to %d.\n", p, n);
 
 	return 0;
